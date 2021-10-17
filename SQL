@@ -1,0 +1,35 @@
+What is the difference between CHAR and VARCHAR2 datatype in SQL? 
+Both of these data types are used for characters, but varchar2 is used for character strings of variable length, whereas char is used for character strings of fixed length.
+For example, if we specify the type as char(5) then we will not be allowed to store a string of any other length in this variable, 
+but if we specify the type of this variable as varchar2(5) then we will be allowed to store strings of variable length.
+We can store a string of length 3 or 4 or 2 in this variable.
+What do you mean by data definition language? 
+Data definition language or DDL allows to execution of queries like CREATE, DROP and ALTER. That is those queries that define the data.
+What do you mean by data manipulation language? 
+Data manipulation Language or DML is used to access or manipulate data in the database. 
+It allows us to perform the below-listed functions: 
+Insert data or rows in a database
+Delete data from the database
+Retrieve or fetch data
+Update data in a database.
+
+CREATE VIEW view_name AS
+SELECT column1, column2.....
+FROM table_name
+WHERE condition;
+
+view_name: Name for the View
+table_name: Name of the table
+condition: Condition to select rows
+CREATE TABLE Orders
+(
+O_ID int NOT NULL,
+ORDER_NO int NOT NULL,
+C_ID int,
+PRIMARY KEY (O_ID),
+FOREIGN KEY (C_ID) REFERENCES Customers(C_ID)
+)
+INNER JOIN: The INNER JOIN keyword selects all rows from both the tables as long as the condition satisfies. This keyword will create the result-set by combining all rows from both the tables where the condition satisfies i.e the value of the common field will be the same.
+LEFT JOIN: This join returns all the rows of the table on the left side of the join and matching rows for the table on the right side of the join. For the rows for which there is no matching row on the right side, the result-set will be null. LEFT JOIN is also known as LEFT OUTER JOIN
+RIGHT JOIN: RIGHT JOIN is similar to LEFT JOIN. This join returns all the rows of the table on the right side of the join and matching rows for the table on the left side of the join. For the rows for which there is no matching row on the left side, the result-set will contain null. RIGHT JOIN is also known as RIGHT OUTER JOIN.
+FULL JOIN: FULL JOIN creates the result-set by combining results of both LEFT JOIN and RIGHT JOIN. The result-set will contain all the rows from both tables. For the rows for which there is no matching, the result-set will contain NULL values.
